@@ -1,43 +1,37 @@
 # Homework 6 - Course Review Application
 
 ## Authors
-1) Name, netid, [GitHub profile name]
-2) Name, netid, [GitHub profile name]
-3) Name, netid, [GitHub profile name]
-4) Name, netid, [GitHub profile name]
+1) John Xereas, dcf9rp, Jxereas
 
 ## To Run
+To run the program you need to run the: 
+CourseReviewsApplication.java
 
-[Add a brief description of which .java file to run, and what vm arguments are needed]
+with vm arguments:
+--module-path [JAVAFX PATH HERE TO LIB] --add-modules javafx.controls,javafx.fxml
 
 ## Contributions
 
-List the primary contributions of each author. It is recommended to update this with your contributions after each coding session.:
-
-### [Author 1 - replace this with their name]
-
-* Author 1 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
-
-### [Author 2 - replace this with their name]
-
-* Author 2 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
-
-### [Author 3 - replace this with their name]
-
-* Author 3 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
-
-### [Author 4 - replace this with their name]
-
-* Author 4 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+### John Xereas
+- Added dependencies for hibernate
+- Added the config xml for hibernate
+- Created the HibernateUtil based on the existing repo from class
+- Made the Course.java class
+- Made the User.java class
+- Made the Review.java class
+- Made the CourseRepository.java database handler class
+- Made the UserRepository.java database handler class
+- Made basic JUnit tests for UserRepository
+- Made the ReviewRepository database handler class
+- Created the login GUI and controller
+- Created the course search GUI and controller
+- Created the add course dialog GUI and controller
+- Created the course reviews GUI and controller
+- Created an Interface for the existing and future dialog controllers
+- Created the add review dialog GUI and controller
+- Created the my reviews GUI and controller
+- Created the main CourseReviewsApplication class
 
 ## Issues
 
-List any known issues (bugs, incorrect behavior, etc.) at the time of submission.
+No known issues at the time of submission.
