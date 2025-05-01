@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox prefWidth="250" prefHeight="125" spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.virginia.sde.reviews.AddCourseDialogController">
+    <padding>
+        <Insets top="20" bottom="20" left="20" right="20"/>
+    </padding>
+
+    <TextField fx:id="catalogField" promptText="Catalog (e.g. CS 3140)"/>
+    <TextField fx:id="nameField" promptText="Course Title"/>
+    <TextField fx:id="instructorField" promptText="Instructor Name"/>
+
+    <Button text="Add" onAction="#handleAddCourse"/>
+    <Label fx:id="messageLabel" style="-fx-text-fill: red"/>
+</VBox>
