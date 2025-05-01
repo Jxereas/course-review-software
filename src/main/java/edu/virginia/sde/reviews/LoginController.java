@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class LoginController {
     @FXML
@@ -23,11 +24,12 @@ public class LoginController {
 
     @FXML
     public void handleLogin(ActionEvent actionEvent) {
-        String username = usernameField.getText().trim();
-        String password = passwordField.getText().trim();
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
         User user = userRepo.getUserByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
+            messageLabel.setTextFill(Color.GREEN);
             messageLabel.setText("Success!");
             CourseReviewsApplication.setLoggedInUser(user);
 
@@ -36,6 +38,7 @@ public class LoginController {
                 // #TODO show warning screen
             }
         } else {
+            messageLabel.setTextFill(Color.RED);
             messageLabel.setText("Invalid username or password.");
         }
     }
@@ -45,17 +48,41 @@ public class LoginController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
-        if (username.isEmpty() || password.length() < 8) {
-            messageLabel.setText("Username required and password must be at least 8 characters.");
+        messageLabel.setTextFill(Color.RED);
+
+        if (username.isEmpty()) {
+            messageLabel.setText("Username is required.");
             return;
         }
+
+        if (username.contains(" ")) {
+            messageLabel.setText("Username can not contains spaces.");
+            return;
+        }
+
+        if (password.isEmpty()) {
+            messageLabel.setText("Password is required.");
+            return;
+        }
+
+        if (password.contains(" ")) {
+            messageLabel.setText("Password can not contains spaces.");
+        }
+
+        if (password.length() < 8) {
+            messageLabel.setText("Password must be at least 8 characters.");
+            return;
+        }
+
 
         if (userRepo.getUserByUsername(username) != null) {
             messageLabel.setText("Username already exists.");
             return;
         }
 
+
         userRepo.createUser(new User(username, password));
+        messageLabel.setTextFill(Color.GREEN);
         messageLabel.setText("Account created. You can now log in.");
     }
 
