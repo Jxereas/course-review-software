@@ -32,4 +32,18 @@ public class CourseRepository {
             return Collections.emptyList();
         }
     }
+
+    boolean courseExists(String catalog, String name, String instructor) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "FROM Course WHERE catalog = :catalog AND name = :name AND instructor = :instructor";
+            SelectionQuery<Course> query = session.createQuery(hql, Course.class);
+            query.setParameter("catalog", catalog);
+            query.setParameter("name", name);
+            query.setParameter("instructor", instructor);
+            return !query.list().isEmpty();
+        } catch (HibernateException e) {
+            System.err.println("Failed to check if course exists: " + e.getMessage());
+            return true;
+        }
+    }
 }
