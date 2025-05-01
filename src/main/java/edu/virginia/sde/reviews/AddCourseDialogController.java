@@ -71,6 +71,11 @@ public class AddCourseDialogController implements DialogController {
             return;
         }
 
+        if (courseRepository.courseExists(mnemonic.toUpperCase() + " " + number, name, instructor)) {
+            messageLabel.setText("Course already exists.");
+            return;
+        }
+
         catalog = mnemonic.toUpperCase() + " " + number;
         Course course = new Course(catalog, name, instructor);
         courseRepository.createCourse(course);
