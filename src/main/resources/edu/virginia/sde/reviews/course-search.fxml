@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.virginia.sde.reviews.CourseSearchController">
+    <padding>
+        <Insets top="20" bottom="20" right="20" left="20"/>
+    </padding>
+
+    <Label text="Course Search"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="catalogField" promptText="Catalog (e.g., CS 3140)"/>
+        <TextField fx:id="nameField" promptText="Name"/>
+        <TextField fx:id="instructorField" promptText="Instructor"/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+
+    <ListView fx:id="courseListView" VBox.vgrow="ALWAYS" onMouseClicked="#handleCourseClick"/>
+
+    <HBox spacing="10">
+        <Button text="Add Course" onAction="#handleAddCourse"/>
+        <Button text="My Reviews" onAction="#handleMyReviews"/>
+        <Button text="Logout" onAction="#handleLogout"/>
+    </HBox>
+</VBox>
