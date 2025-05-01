@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.virginia.sde.reviews.AddReviewDialogController">
+    <Label text="Rating (1-5):"/>
+    <Spinner fx:id="ratingSpinner"/>
+
+    <Label text="Comment:"/>
+    <TextArea fx:id="commentArea" prefRowCount="4" wrapText="true"/>
+
+    <Label fx:id="messageLabel" style="-fx-text-fill: red"/>
+
+    <Button text="Submit Review" onAction="#handleAddReview"/>
+</VBox>
