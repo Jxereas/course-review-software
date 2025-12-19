@@ -1,37 +1,66 @@
-# Homework 6 - Course Review Application
+# Course Review Application
 
-## Authors
-1) John Xereas, dcf9rp, Jxereas
+A JavaFX desktop application that allows users to create accounts, search for university courses, and write anonymous course reviews with persistent storage.
 
-## To Run
-To run the program you need to run the: 
+This project implements a full CRUD workflow and was developed as part of a software development capstone.
+
+---
+
+## Overview
+
+The application allows users to:
+- Create an account and log in
+- Add and search for university courses
+- Write, edit, and delete anonymous course reviews
+- View average course ratings and review history
+- Persist all data using a local SQLite database
+
+The system enforces constraints such as unique usernames, one review per user per course, and automatic database reconstruction if the database is missing.
+
+---
+
+## Features
+
+- User authentication (login and account creation)
+- Course search by subject, number, or title
+- Add new courses with input validation
+- Anonymous course reviews with ratings and optional comments
+- Edit and delete existing reviews
+- View all reviews written by the logged-in user
+- Automatic calculation of average course ratings
+- Persistent storage using SQLite
+- Hibernate ORM for database interaction
+- JavaFX-based GUI with multiple scenes
+
+---
+
+## Tech Stack
+
+- Java 21
+- JavaFX 21
+- SQLite
+- Hibernate ORM
+- Gradle
+- JUnit (basic repository testing)
+
+---
+
+## Running the Application
+
+The main entry point is:
+
 CourseReviewsApplication.java
 
-with vm arguments:
---module-path [JAVAFX PATH HERE TO LIB] --add-modules javafx.controls,javafx.fxml
 
-## Contributions
+To run the application, ensure JavaFX is available and pass the required VM arguments:
 
-### John Xereas
-- Added dependencies for hibernate
-- Added the config xml for hibernate
-- Created the HibernateUtil based on the existing repo from class
-- Made the Course.java class
-- Made the User.java class
-- Made the Review.java class
-- Made the CourseRepository.java database handler class
-- Made the UserRepository.java database handler class
-- Made basic JUnit tests for UserRepository
-- Made the ReviewRepository database handler class
-- Created the login GUI and controller
-- Created the course search GUI and controller
-- Created the add course dialog GUI and controller
-- Created the course reviews GUI and controller
-- Created an Interface for the existing and future dialog controllers
-- Created the add review dialog GUI and controller
-- Created the my reviews GUI and controller
-- Created the main CourseReviewsApplication class
+--module-path [PATH_TO_JAVAFX_LIB] --add-modules javafx.controls,javafx.fxml
 
-## Issues
 
-No known issues at the time of submission.
+The application will initialize the database automatically if it does not already exist.
+
+---
+
+## Notes
+
+This project was originally developed as part of coursework at the University of Virginia.  
